@@ -28,11 +28,18 @@ class Users extends React.Component {
 	};
 
 	render() {
+		console.log(this.state.users);
 		return (
 			<div className="users">
 				<button onClick={this.logOut}>Log out</button>
 				<h2>Our Users</h2>
-				<ul>{this.state.users.map((u) => <li key={u.id}>{u.username}</li>)}</ul>
+				<ul>
+					{this.state.users.map((u) => (
+						<li key={u.id}>
+							{u.username}&nbsp;|&nbsp;{u.department}
+						</li>
+					))}
+				</ul>
 			</div>
 		);
 	}
